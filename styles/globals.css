@@ -1,0 +1,36 @@
+.loginRegister {
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../LoginPage.svg);
+  }
+  
+  .loginRegister:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top left, transparent 0%, black 95%);
+  }
+  
+  .login_header {
+    background: linear-gradient(92.1deg, #86040C 3.53%, #4A0612 80.07%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .box_login {
+    background: linear-gradient(107.95deg, rgba(255, 255, 255, 0.1) 17.47%, rgba(255, 255, 255, 0.025) 79.89%);
+    box-shadow: 0px 2.93007px 17.5804px -0.732517px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3.66259px);
+    border-radius: 7.32518px;
+    box-shadow: 0px 2.93007px 17.5804px -0.732517px rgba(0, 0, 0, 0.2);
+  }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
