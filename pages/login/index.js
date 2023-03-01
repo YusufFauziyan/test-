@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { FiAlertCircle } from "react-icons/fi";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 const Login = () => {
   const router = useRouter();
@@ -47,21 +48,26 @@ const Login = () => {
                 }}
                 validationSchema={SignupSchema}
                 onSubmit={async (values) => {
-                  const { data } = await mutationLogin({
-                    variables: {
-                      input: {
-                        email: values.email,
-                        password: values.password,
-                      },
-                    },
-                  });
+                  try {
+                    const { data } = await axios.post(
+                      `${process.env.API_ZEPLYN}/login`,
+                      new URLSearchParams({
+                        userName: "admin",
+                        password: "admin",
+                      })
+                    );
 
-                  dispatch(
-                    setUser({
-                      login: data.login,
-                      password: values.password,
-                    })
-                  );
+                    console.log(data);
+                  } catch (error) {
+                    console.log(error);
+                  }
+
+                  // dispatch(
+                  //   setUser({
+                  //     login: data.login,
+                  //     password: values.password,
+                  //   })
+                  // );
 
                   return true;
                 }}
